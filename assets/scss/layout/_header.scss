@@ -1,0 +1,21 @@
+.header {
+  &__navbar {
+    background-color: blue;
+    padding: 10px 0;
+  }
+
+  &__menu {
+    &__text {
+      margin-right: 10px;
+    }
+
+    &__image {
+      background-image: url(../images/profile.jpg);
+      background-size: cover;
+      width: 43px !important;
+      display: inline-block;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+  }
+}
