@@ -1,0 +1,48 @@
+.height {
+  &--full {
+    position: relative;
+    min-height: 60rem;
+  }
+}
+
+.img {
+  &--block {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  &--background {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover !important;
+  }
+
+  &--container {
+    margin-bottom: 2rem;
+  }
+}
+
+.square {
+  width: 100%;
+
+  &:after {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+  }
+}
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

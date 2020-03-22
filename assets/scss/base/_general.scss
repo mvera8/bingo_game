@@ -1,0 +1,19 @@
+//
+// Body
+//------------------------------------
+
+html {
+  font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+.testimg {
+  background-color: yellow;
+  background-image: url(../images/martin_vera.png);
+  background-position: top left;
+  height: 110px;
+  width: 110px;
+}
