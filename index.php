@@ -1,107 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Bingo</title>
-		<?php 
-		$scripts_dir = 'dist/js';
-		$scripts = glob($scripts_dir . '/bundle.*.js');
-		$script = array_rand($scripts);
-		echo '<script src="' . $scripts[$script] . '"></script>';
+<?php
+include('conexion.php');
 
-		$link_dir = 'dist/css';
-		$links = glob($link_dir . '/bundle.*.css');
-		$link = array_rand($links);
-		echo '<link rel="stylesheet" href="' . $links[$link] . '">';
-		?>
-	</head>
-	<body>
-		<script>
-		  function statusChangeCallback(response) {
-	        // console.log(response);
-	        if (response.status === 'connected') {
-	            FB.api('/me', function (response) {
-	                document.getElementById('status').innerHTML =
-	                  'Thanks for logging in, ' + response.name + '!';
-	                document.getElementById("profileImage").setAttribute("src", "https://graph.facebook.com/" + response.id + "/picture?type=normal");
-	            });
-	            document.getElementById('login-button').style.display = 'none';
-	            document.getElementById('profileImage').style.display = 'block';
-	        } else {
-	            document.getElementById('status').innerHTML = 'Please loggin for play: ';
-	        }
-	    }
+$query = 'SELECT * FROM bingo';
+$resultado = mysqli_query ($link, $query);
+while($row = mysqli_fetch_array($resultado)){
+	if ($row['activo'] == 1) {
+		$entrada = $row['entrada'];
+		$pozo = $row['pozo'];
+	}
+}
 
-		  window.fbAsyncInit = function() {
-		    FB.init({
-		      appId      : '1172283279776082',
-		      cookie     : true,
-		      xfbml      : true,
-		      version    : 'v3.2'
-		    });
-		      
-		    FB.AppEvents.logPageView();  
+include('header.php');
+include('facebook.php');
+include('nav.php');
+?>
 
-		    FB.getLoginStatus(function(response) {
-			    statusChangeCallback(response);
-			}); 
-		      
-		  };
+<script>
+function showCarton() {
+  var carton = document.getElementById("carton");
+  var participar = document.getElementById("participar");
+  if (carton.style.display === "none") {
+    carton.style.display = "block";
+    participar.style.display = "none";
+  }
+}
 
-		  (function(d, s, id){
-		     var js, fjs = d.getElementsByTagName(s)[0];
-		     if (d.getElementById(id)) {return;}
-		     js = d.createElement(s); js.id = id;
-		     js.src = "https://connect.facebook.net/en_US/sdk.js";
-		     fjs.parentNode.insertBefore(js, fjs);
-		   }(document, 'script', 'facebook-jssdk'));
-		</script>
+function cambiarNumeros() {
+	var cartonNumber = document.getElementsByClassName("carton__number");
+	cartonNumber[0].innerHTML = Math.floor(Math.random() * 11);
+	cartonNumber[1].innerHTML = Math.floor(Math.random() * 11) + 10;
+	cartonNumber[2].innerHTML = Math.floor(Math.random() * 11) + 20;
+	cartonNumber[3].innerHTML = Math.floor(Math.random() * 11) + 30;
+	cartonNumber[4].innerHTML = Math.floor(Math.random() * 11) + 40;
+	cartonNumber[5].innerHTML = Math.floor(Math.random() * 11) + 50;
+}
+</script>
 
-		<div class="container">
-			<h1>Facebook SDK login con Javascript</h1>
+<section class="py-5">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-md-7">
+				<div id="participar" class="text-center py-5">
+			     	<p>Para participar son <b>$<?php echo $entrada; ?></b></p>
+			     	<p><b>Se debera girar despues.</b></p>
+					<p><button type="button" onclick="showCarton()" class="btn btn-primary">Participar</button></p>
+				</div>
+
+				
+				<div id="carton" class="carton" style="display: block;">
+					<h2>Carton</h2>
+					<form action="form_participar.php" method="post">
+						<input type="text" name="nombre" value="Tin" />
+						<?php include('part_carton.php'); ?>
+						<p><button type="submit" class="btn btn-primary">Jugar carton</button> 
+							<button type="button" onclick="cambiarNumeros()" class="btn btn-border">Cambiar numeros</button></p>
+					</form>
+				</div>
+
+		    </div>
+		    <div class="col-12 col-md-5">
+		    	<div class="text-center py-5" style="background-color: yellow;">
+			     	<p>Pozo acumulado</p>
+			     	<h1>$<?php echo $pozo; ?></h1>
+				</div>
+		    </div>
 		</div>
-
-		<div id="status"></div>
-		<div id="login-button">
-			<fb:login-button 
-			  scope="public_profile,email"
-			  onlogin="checkLoginState();">
-			</fb:login-button>
-		</div>
-		<img id="profileImage" src="" style="display: none;" />
-
-
-		<?php
-		$number1 = rand(0, 10);
-		$number2 = rand(11, 20);
-		$number3 = rand(21, 30);
-		$number4 = rand(31, 40);
-		$number5 = rand(41, 50);
-
-		$paquetes = array (
-			$number1,
-			$number2,
-			$number3,
-			$number4,
-			$number5
-		);
-
-		$equipo_bingo = array (
-			array("Marcia"),
-			array("Yanet"),
-			array("Martin")
-		);
-		 
-		foreach($equipo_bingo as $equipo) {
-			echo "Hoy participan: ";
-		 	foreach($equipo as $jugador) {
-				echo $jugador ." ";
-				foreach($paquetes as $paquete) {
-					echo " " . $paquete;
-				}
-			}
-		 	echo "<br>";
-		 }
-		?>
-	</body>
-</html>
+	</div>
+</section>
+<?php include('footer.php'); ?>

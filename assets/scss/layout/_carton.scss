@@ -1,0 +1,26 @@
+.carton {
+  &__holder {
+    background-color: $black;
+    margin: 1rem 0;
+    padding-top: 20px;
+
+    @include media-breakpoint-down(md) {
+      margin: 0;
+    }
+  }
+
+  &__number {
+    background-color: $white;
+    border: solid 1px $black;
+    height: 70px;
+    line-height: 70px;
+    font-size: 40px;
+    padding: 0;
+    display: block;
+    width: 100%;
+
+    &--selected {
+      background-color: red;
+    }
+  }
+}

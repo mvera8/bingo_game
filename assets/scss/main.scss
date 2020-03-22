@@ -4,7 +4,7 @@
 @import '~bootstrap/scss/mixins';
 
 // Optional Bootstrap
-// @import '~bootstrap/scss/alert';
+@import '~bootstrap/scss/alert';
 // @import '~bootstrap/scss/badge';
 // @import '~bootstrap/scss/breadcrumb';
 // @import '~bootstrap/scss/button-group';
@@ -41,4 +41,6 @@
 @import 'base/general';
 
 // Layout
+@import 'layout/header';
+@import 'layout/carton';
 @import 'layout/mv_styles';
