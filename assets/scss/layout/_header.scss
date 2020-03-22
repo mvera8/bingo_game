@@ -1,12 +1,14 @@
 .header {
   &__navbar {
-    background-color: blue;
     padding: 10px 0;
   }
 
   &__menu {
     &__text {
+      display: inline-block;
       margin-right: 10px;
+      position: relative;
+      top: -15px;
     }
 
     &__image {

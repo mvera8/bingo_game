@@ -1,5 +1,15 @@
 <?php
 include('conexion.php');
+
+$query = 'SELECT * FROM bingo';
+$resultado = mysqli_query ($link, $query);
+while($row = mysqli_fetch_array($resultado)){
+	if ($row['activo'] == 1) {
+		$entrada = $row['entrada'];
+		$pozo = $row['pozo'];
+	}
+}
+
 include('header.php');
 include('facebook.php');
 include('nav.php');
@@ -30,36 +40,28 @@ function cambiarNumeros() {
 	<div class="container">
 		<div class="row">
 			<div class="col-12 col-md-7">
-				<div id="participar" class="text-center">
-			     	<p>Para participar son <b>$30</b></p>
-			     	<p>Se debera girar despues.</p>
-					<p><button type="button" onclick="showCarton()" class="btn btn-primary">participar</button></p>
+				<div id="participar" class="text-center py-5">
+			     	<p>Para participar son <b>$<?php echo $entrada; ?></b></p>
+			     	<p><b>Se debera girar despues.</b></p>
+					<p><button type="button" onclick="showCarton()" class="btn btn-primary">Participar</button></p>
 				</div>
 
 				
-				<div id="carton" class="carton" style="display: none;">
+				<div id="carton" class="carton" style="display: block;">
 					<h2>Carton</h2>
-					<div class="form-group carton__holder">
-						<div class="row no-gutters">
-							<?php
-							$numeros = array(rand(0, 10), rand(11, 20), rand(21, 30), rand(31, 40), rand(41, 50), rand(51, 60));
-							foreach ($numeros as $numero) {
-								echo '<div class="col-6 col-md-2 text-center">
-									<div class="carton__number">'.$numero.'</div>
-								</div>';
-							}
-							?>
-							
-						</div>
-					</div>
-					<p><button type="button" onclick="cambiarNumeros()" class="btn btn-warning">Cambiar numeros</button></p>
+					<form action="form_participar.php" method="post">
+						<input type="text" name="nombre" value="Tin" />
+						<?php include('part_carton.php'); ?>
+						<p><button type="submit" class="btn btn-primary">Jugar carton</button> 
+							<button type="button" onclick="cambiarNumeros()" class="btn btn-border">Cambiar numeros</button></p>
+					</form>
 				</div>
 
 		    </div>
 		    <div class="col-12 col-md-5">
-		    	<div class="text-center" style="background-color: yellow;">
+		    	<div class="text-center py-5" style="background-color: yellow;">
 			     	<p>Pozo acumulado</p>
-			     	<h1>$<span>3000</span></h1>
+			     	<h1>$<?php echo $pozo; ?></h1>
 				</div>
 		    </div>
 		</div>
