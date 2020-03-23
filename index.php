@@ -14,28 +14,6 @@ include('header.php');
 include('facebook.php');
 include('nav.php');
 ?>
-
-<script>
-function showCarton() {
-  var carton = document.getElementById("carton");
-  var participar = document.getElementById("participar");
-  if (carton.style.display === "none") {
-    carton.style.display = "block";
-    participar.style.display = "none";
-  }
-}
-
-function cambiarNumeros() {
-	var cartonNumber = document.getElementsByClassName("carton__number");
-	cartonNumber[0].innerHTML = Math.floor(Math.random() * 11);
-	cartonNumber[1].innerHTML = Math.floor(Math.random() * 11) + 10;
-	cartonNumber[2].innerHTML = Math.floor(Math.random() * 11) + 20;
-	cartonNumber[3].innerHTML = Math.floor(Math.random() * 11) + 30;
-	cartonNumber[4].innerHTML = Math.floor(Math.random() * 11) + 40;
-	cartonNumber[5].innerHTML = Math.floor(Math.random() * 11) + 50;
-}
-</script>
-
 <section class="py-5">
 	<div class="container">
 		<div class="row">
@@ -45,9 +23,8 @@ function cambiarNumeros() {
 			     	<p><b>Se debera girar despues.</b></p>
 					<p><button type="button" onclick="showCarton()" class="btn btn-primary">Participar</button></p>
 				</div>
-
 				
-				<div id="carton" class="carton" style="display: block;">
+				<div id="carton" class="carton">
 					<h2>Carton</h2>
 					<form action="form_participar.php" method="post">
 						<input type="text" name="nombre" value="Tin" />
@@ -56,7 +33,6 @@ function cambiarNumeros() {
 							<button type="button" onclick="cambiarNumeros()" class="btn btn-border">Cambiar numeros</button></p>
 					</form>
 				</div>
-
 		    </div>
 		    <div class="col-12 col-md-5">
 		    	<div class="text-center py-5" style="background-color: yellow;">

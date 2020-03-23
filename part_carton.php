@@ -1,13 +1,3 @@
-<script>
-function showCarton() {
-  var carton = document.getElementById("carton");
-  var participar = document.getElementById("participar");
-  if (carton.style.display === "none") {
-    carton.style.display = "block";
-    participar.style.display = "none";
-  }
-}
-</script>
 <div class="carton__holder">
 	<div class="row no-gutters">
 		<?php
