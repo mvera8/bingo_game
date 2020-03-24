@@ -22,7 +22,6 @@ include('nav.php');
 					<?php include('part_video.php'); ?>
 					<form name="contact" action="">
 						<?php include('part_carton.php'); ?>
-						<input type="submit" onclick="updateForm()" value="Send" />
 					</form>
 					<div id='message'></div>
 				<?php } ?>
