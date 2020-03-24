@@ -3,8 +3,9 @@
     // console.log(response);
     if (response.status === 'connected') {
         FB.api('/me', function (response) {
-            document.getElementById('profileName').innerHTML = response.name;
-            $('#profileImage').css('background-image', 'url(https://graph.facebook.com/' + response.id + '/picture?type=normal');
+          $('#profileName').html(response.name);
+          $('#profileId').html(response.id);
+          $('#profileImage').css('background-image', 'url(https://graph.facebook.com/' + response.id + '/picture?type=normal');
         });
         $('#profileImage').show();
     } else {
