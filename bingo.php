@@ -2,7 +2,6 @@
 include 'conexion.php';
 
 $hayBingo = 0;
-
 $query = 'SELECT * FROM bingo';
 $resultado = mysqli_query ($link, $query);
 while($row = mysqli_fetch_array($resultado)){
@@ -21,7 +20,11 @@ include('nav.php');
 			<div class="col-12 col-md-7">
 				<?php if ($hayBingo == 1) { ?>
 					<?php include('part_video.php'); ?>
-					<?php include('part_carton.php'); ?>
+					<form name="contact" action="">
+						<?php include('part_carton.php'); ?>
+						<input type="submit" onclick="updateForm()" value="Send" />
+					</form>
+					<div id='message'></div>
 				<?php } ?>
 			</div>
 			<div class="col-12 col-md-5">

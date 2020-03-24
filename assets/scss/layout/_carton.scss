@@ -14,12 +14,17 @@
   &__number {
     background-color: $white;
     border: solid 1px $black;
+    display: block;
+    font-size: 40px;
     height: 70px;
     line-height: 70px;
-    font-size: 40px;
     padding: 0;
-    display: block;
+    text-align: center;
     width: 100%;
+
+    &--text {
+      pointer-events: none;
+    }
 
     &--selected {
       background-color: red;
