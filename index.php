@@ -65,8 +65,6 @@ include('nav.php');
 						<input type="hidden" id="nombre_facebook" name="nombre_facebook" value="" />
 						<input type="hidden" id="id_facebook" name="id_facebook" value="" />
 						<?php include('part_carton.php'); ?>
-						<p><button type="submit" class="btn btn-primary">Jugar carton</button> 
-							<button type="button" onclick="cambiarNumeros()" class="btn btn-border">Cambiar numeros</button></p>
 					</form>
 				</div>
 		    </div>
