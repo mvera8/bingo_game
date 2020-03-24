@@ -1,0 +1,7 @@
+.btn {
+  &--big {
+    @include robotoRegular();
+
+    font-size: 36px;
+  }
+}

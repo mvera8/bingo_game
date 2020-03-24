@@ -1,0 +1,47 @@
+.site {
+  &__logo {
+    position: relative;
+    margin-bottom: 35px;
+  }
+
+  &__title {
+    @include luckiestRegular();
+
+    color: $primary-color;
+    font-size: 140px;
+    text-shadow: 2px 0 0 $secondary-color, -2px 0 0 $secondary-color, 0 2px 0 $secondary-color, 0 -2px 0 $secondary-color, 1px 1px $secondary-color, -1px -1px 0 $secondary-color, 1px -1px 0 $secondary-color, -1px 1px 0 $secondary-color;
+
+    &--header {
+      display: none;
+      font-size: 36px;
+    }
+  }
+
+  &__en-casa {
+    background-image: url(../images/en-casa.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 52px;
+    position: absolute;
+    left: 60%;
+    bottom: 0;
+    width: 100px;
+  }
+
+  &__pelotas {
+    background-image: url(../images/pelotas.png);
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+  }
+
+  #status {
+    margin-bottom: 20px;
+  }
+}

@@ -3,7 +3,13 @@
 //------------------------------------
 
 body {
+  @include robotoRegular();
+
+  background-image: url(../images/bg.jpg);
+  background-position: center;
+  background-size: cover;
   font-size: 18px;
+  color: $black;
 }
 
 .testimg {

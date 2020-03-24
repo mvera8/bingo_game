@@ -13,31 +13,32 @@ while($row = mysqli_fetch_array($resultado)){
 	}
 }
 ?>
-<div class="carton__title text-center">
-	<h3>Bingo</h3>
-</div>
-<div class="carton__holder">
-	<div class="row no-gutters">
-		<?php
-		$count = 0;
-		foreach ($numeros as $numero) {
-			$count++;
-			$numeroX = str_replace('x', '', $numero);
-			echo '<div class="col-6 col-md-2 text-center">';
-			if ($numerosElegidos == 1) {
-				echo '<input type="hidden" name="cartonNumber'.$count.'" value="'.$numeroX.'" />';
-				echo '<input type="button" onclick="numeroActivo(this)" id="cartonNumber'.$count.'" class="carton__number';
-				if (strpos($numero, 'x') !== false) {
-					$tieneX = 1;
-				    echo ' carton__number--selected';
+<div class="carton__block text-center">
+	<h3 class="carton__block__title">Bingo</h3>
+	<p class="carton__block__text">Lorem ipsum ist vest.</p>
+	<div class="carton__holder">
+		<div class="row no-gutters">
+			<?php
+			$count = 0;
+			foreach ($numeros as $numero) {
+				$count++;
+				$numeroX = str_replace('x', '', $numero);
+				echo '<div class="col-6 col-md-4 text-center">';
+				if ($numerosElegidos == 1) {
+					echo '<input type="hidden" name="cartonNumber'.$count.'" value="'.$numeroX.'" />';
+					echo '<input type="button" onclick="numeroActivo(this)" id="cartonNumber'.$count.'" class="carton__number';
+					if (strpos($numero, 'x') !== false) {
+						$tieneX = 1;
+					    echo ' carton__number--selected';
+					}
+					echo '" value="'.$numeroX.'" />';
+				} else {
+					echo '<input type="text" name="cartonNumber'.$count.'" class="carton__number carton__number--text" value="'.$numero.'" />';
 				}
-				echo '" value="'.$numeroX.'" />';
-			} else {
-				echo '<input type="text" name="cartonNumber'.$count.'" class="carton__number carton__number--text" value="'.$numero.'" />';
+				echo '</div>';
 			}
-			echo '</div>';
-		}
-		?>
+			?>
+		</div>
 	</div>
 </div>
 <?php if ($tieneX === 0) { ?>

@@ -1,4 +1,7 @@
 <a class="navbar-brand header__brand" href="index.php">
-    <img src="https://getbootstrap.com/docs/4.4/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-    Bingo Mar&Mar
+    <div class="site__logo">
+		<h1 class="site__title">Bingo!</h1>
+		<h1 class="site__title site__title--header">Bingo!</h1>
+		<div class="site__en-casa"></div>
+	</div>
 </a>
