@@ -1,0 +1,19 @@
+//
+// Fonts
+// ------------------------------------
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Roboto:wght@300;400&display=swap');
+
+@mixin luckiestRegular() {
+  font-family: 'Luckiest Guy', cursive;
+  font-weight: 400;
+}
+
+@mixin robotoRegular() {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+@mixin robotoLight() {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}

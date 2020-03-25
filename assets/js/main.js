@@ -37,7 +37,7 @@ window.cambiarNumeros = cambiarNumeros;
 
 function numeroActivo(elem) {
   var id_facebook = $('#profileId').html()
-  var xValue = ($(elem).prev().val()) + 'x'
+  var xValue = ($(elem).prev().val())
   console.log(id_facebook)
   console.log(xValue)
   console.log(elem.id)

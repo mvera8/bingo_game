@@ -16,9 +16,9 @@ include('header.php');
 include('facebook.php');
 include('nav.php');
 ?>
-<section class="py-5">
+<section class="site">
 	<div class="container">
-		<div class="row">
+		<div class="row align-items-center height--full">
 			<div class="col-12 col-md-7">
 				<?php
 				if(isset($_GET['mensaje'])){
@@ -55,7 +55,7 @@ include('nav.php');
 							</div>
 						</div>
 
-						<p><button type="button" onclick="showCarton()" class="btn btn-primary">Participar</button></p>
+						<p><button type="button" onclick="showCarton()" class="btn btn-primary btn--big">Participar</button></p>
 					</div>
 				<?php } ?>
 				<div id="carton" class="carton">
@@ -65,8 +65,6 @@ include('nav.php');
 						<input type="hidden" id="nombre_facebook" name="nombre_facebook" value="" />
 						<input type="hidden" id="id_facebook" name="id_facebook" value="" />
 						<?php include('part_carton.php'); ?>
-						<p><button type="submit" class="btn btn-primary">Jugar carton</button> 
-							<button type="button" onclick="cambiarNumeros()" class="btn btn-border">Cambiar numeros</button></p>
 					</form>
 				</div>
 		    </div>

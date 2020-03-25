@@ -1,0 +1,8 @@
+.btn {
+  &--big {
+    @include robotoLight();
+
+    font-size: 34px;
+    font-weight: 300;
+  }
+}
