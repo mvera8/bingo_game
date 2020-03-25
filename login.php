@@ -18,6 +18,7 @@ include('facebook.php');
 						  Continuar
 						</fb:login-button>
 					</div>
+					<p>Un producto de <b>Mar&Mar</b></p>
 				</div>
 			</div>
 			<div class="col-12 col-md-6">

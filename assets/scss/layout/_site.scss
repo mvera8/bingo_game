@@ -8,8 +8,20 @@
     @include luckiestRegular();
 
     color: $primary-color;
-    font-size: 140px;
-    text-shadow: 2px 0 0 $secondary-color, -2px 0 0 $secondary-color, 0 2px 0 $secondary-color, 0 -2px 0 $secondary-color, 1px 1px $secondary-color, -1px -1px 0 $secondary-color, 1px -1px 0 $secondary-color, -1px 1px 0 $secondary-color;
+    font-size: 180px;
+    //text-shadow: 2px 0 0 $secondary-color, -2px 0 0 $secondary-color, 0 2px 0 $secondary-color, 0 -2px 0 $secondary-color, 1px 1px $secondary-color, -1px -1px 0 $secondary-color, 1px -1px 0 $secondary-color, -1px 1px 0 $secondary-color;
+    text-transform: uppercase;
+    background: linear-gradient(to top, $secondary-color 0%, $primary-color 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @include media-breakpoint-down(md) {
+      font-size: 130px;
+    }
+
+    @include media-breakpoint-down(xs) {
+      font-size: 80px;
+    }
 
     &--header {
       display: none;
@@ -27,6 +39,10 @@
     left: 60%;
     bottom: 0;
     width: 100px;
+
+    @include media-breakpoint-down(xs) {
+      bottom: -20px;
+    }
   }
 
   &__pelotas {
@@ -36,7 +52,7 @@
     background-repeat: no-repeat;
     margin: 0 auto;
 
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(sm) {
       display: none;
     }
   }

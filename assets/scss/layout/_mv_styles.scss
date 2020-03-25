@@ -46,3 +46,35 @@
     height: 100%;
   }
 }
+
+footer {
+  position: relative;
+}
+
+.martinvera {
+  background-image: url(../images/martin_vera.png);
+  background-repeat: no-repeat;
+  bottom: 10px;
+  height: 26px;
+  filter: alpha(opacity=60);
+  left: 10px;
+  position: absolute;
+  opacity: 0.6;
+  transition: width 0.5s;
+  width: 26px;
+  z-index: 2;
+
+  &:hover {
+    width: 126px;
+    opacity: 1;
+    filter: alpha(opacity=100);
+  }
+
+  @include media-breakpoint-down(sm) {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    width: 26px !important;
+    left: 50%;
+    margin-left: -13px;
+  }
+}
