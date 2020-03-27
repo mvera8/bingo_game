@@ -26,10 +26,15 @@
     }
   }
 
-  .site__title {
-    display: none;
+  .site__logo {
+    margin-bottom: 0;
+    width: 90px;
 
-    &--header {
+    img {
+      display: none;
+    }
+
+    .img--header {
       display: block;
     }
   }

@@ -31,8 +31,9 @@ include('nav.php');
 					<p>No hay bingo creado</p>
 				<?php } else { ?>
 					<div id="participar" class="text-center py-5">
-				     	<p>Para participar son <b>$<?php echo $entrada; ?></b></p>
-				     	<p><b>Se debera girar despues. <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">Donde Girar?</button></b></p>
+				     	<h3>Para participar son <b>$<?php echo $entrada; ?></b></h3
+				     	<p><b>Se debera girar el $$ antes o después.</b><br />Nosotros se la giraremos o se la haremos llegar al ganador.</p>
+				     	<p><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">Donde Girar?</button></b></p>
 
 						<!-- Modal -->
 						<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
