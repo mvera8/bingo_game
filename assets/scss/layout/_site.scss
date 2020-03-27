@@ -2,31 +2,23 @@
   &__logo {
     position: relative;
     margin-bottom: 35px;
-  }
-
-  &__title {
-    @include luckiestRegular();
-
-    color: $primary-color;
-    font-size: 180px;
-    //text-shadow: 2px 0 0 $secondary-color, -2px 0 0 $secondary-color, 0 2px 0 $secondary-color, 0 -2px 0 $secondary-color, 1px 1px $secondary-color, -1px -1px 0 $secondary-color, 1px -1px 0 $secondary-color, -1px 1px 0 $secondary-color;
-    text-transform: uppercase;
-    background: linear-gradient(to top, $secondary-color 0%, $primary-color 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    width: 640px;
 
     @include media-breakpoint-down(md) {
-      font-size: 130px;
+      width: 530px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      width: 490px;
     }
 
     @include media-breakpoint-down(xs) {
-      font-size: 80px;
+      width: 280px;
     }
+  }
 
-    &--header {
-      display: none;
-      font-size: 36px;
-    }
+  &__title {
+    display: none;
   }
 
   &__en-casa {
@@ -36,7 +28,8 @@
     background-size: cover;
     height: 52px;
     position: absolute;
-    left: 60%;
+    left: 50%;
+    margin-left: -50px;
     bottom: 0;
     width: 100px;
 
