@@ -15,9 +15,8 @@ while($row = mysqli_fetch_array($resultado)){
 ?>
 <div class="carton__block text-center">
 	<h3 class="carton__block__title">Bingo</h3>
-	<p class="carton__block__text">Lorem ipsum ist vest.</p>
 	<div class="carton__holder">
-		<div class="row no-gutters">
+		<div class="row">
 			<?php
 			$count = 0;
 			foreach ($numeros as $numero) {
@@ -42,6 +41,6 @@ while($row = mysqli_fetch_array($resultado)){
 	</div>
 </div>
 <?php if ($tieneX === 0) { ?>
-	<p><button type="submit" class="btn btn-primary">Jugar carton</button> 
-	<button type="button" onclick="cambiarNumeros()" class="btn btn-border">Cambiar numeros</button></p>
+	<p><button type="submit" class="btn btn--green">Jugar carton</button> 
+	<button type="button" onclick="cambiarNumeros()" class="btn btn--border">Cambiar numeros</button></p>
 <?php } ?>

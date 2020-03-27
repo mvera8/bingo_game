@@ -1,7 +1,29 @@
 .btn {
-  &--big {
-    @include robotoRegular();
+  @include luckiestRegular();
 
-    font-size: 36px;
+  border: solid 2px $black;
+  color: $white !important;
+  font-size: 18px;
+  padding: 10px 25px;
+  border-radius: 50px;
+
+  &--big {
+    font-size: 34px;
+  }
+
+  &--green {
+    background: rgba(13, 237, 9, 1);
+    background: linear-gradient(to top, rgba(13, 237, 9, 1) 0%, rgba(7, 158, 2, 1) 100%);
+    filter: progid:dximagetransform.microsoft.gradient(startColorstr='#0ded09', endColorstr='#079e02', GradientType=1);
+  }
+
+  &--orange {
+    background: rgba(255, 199, 88, 1);
+    background: linear-gradient(to top, rgba(255, 199, 88, 1) 0%, rgba(178, 43, 22, 1) 100%);
+    filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffc758', endColorstr='#b22b16', GradientType=1);
+  }
+
+  &--border {
+    border: none;
   }
 }

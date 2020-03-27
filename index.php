@@ -33,7 +33,7 @@ include('nav.php');
 					<div id="participar" class="text-center py-5">
 				     	<h3>Para participar son <b>$<?php echo $entrada; ?></b></h3
 				     	<p><b>Se debera girar el $$ antes o después.</b><br />Nosotros se la giraremos o se la haremos llegar al ganador.</p>
-				     	<p><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">Donde Girar?</button></b></p>
+				     	<p><button type="button" class="btn btn--orange" data-toggle="modal" data-target="#exampleModal">Donde Girar?</button></b></p>
 
 						<!-- Modal -->
 						<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -56,11 +56,10 @@ include('nav.php');
 							</div>
 						</div>
 
-						<p><button type="button" onclick="showCarton()" class="btn btn-primary btn--big">Participar</button></p>
+						<p><button type="button" onclick="showCarton()" class="btn btn--green btn--big">Participar</button></p>
 					</div>
 				<?php } ?>
 				<div id="carton" class="carton">
-					<h2>Carton</h2>
 					<p>Elige tus numeros!.</p>
 					<form action="form_participar.php" method="post">
 						<input type="hidden" id="nombre_facebook" name="nombre_facebook" value="" />
