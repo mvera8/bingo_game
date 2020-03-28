@@ -65,11 +65,7 @@ include('nav.php');
 				</div>
 		    </div>
 		    <div class="col-12 col-md-5">
-		    	<div class="text-center py-5" style="background-color: yellow;">
-			     	<h3>Pozo acumulado</h3>
-			     	<h1>$<?php echo $pozo; ?></h1>
-			     	<p>Hay 3 personas que van a participar!</p>
-				</div>
+		    	<?php include('part_jackpot.php'); ?>
 		    </div>
 		</div>
 	</div>

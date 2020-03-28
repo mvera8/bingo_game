@@ -4,14 +4,9 @@ import 'bootstrap'
 var window = require('window')
 window.$ = window.jQuery = window.jquery = $
 
-$(window).on('load', function () {
-  // know if working
-  $('body').addClass('bbb')
-})
-
 $(document).ready(function () {
-  // know if working
-  $('body').addClass('ccc')
+  var idFacebook = $('#profileId').html();
+  $('#id_usuario').val(idFacebook)
   bingo()
 })
 
