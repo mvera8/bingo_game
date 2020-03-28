@@ -3,6 +3,7 @@ include 'conexion.php';
 
 $nombre_facebook = $_POST['nombre_facebook'];
 $id_facebook = $_POST['id_facebook'];
+$id_bingo = $_POST['id_bingo'];
 $cartonNumber1 = $_POST['cartonNumber1'];
 $cartonNumber2 = $_POST['cartonNumber2'];
 $cartonNumber3 = $_POST['cartonNumber3'];
@@ -29,7 +30,7 @@ if(($nombre_facebook == '')){
 	}
 
 	if($listar == 0){
-		$queryParticipar = "INSERT INTO usuarios values ('','$id_facebook','$nombre_facebook','$cartonNumber1','$cartonNumber2','$cartonNumber3','$cartonNumber4','$cartonNumber5','$cartonNumber6','participante')";
+		$queryParticipar = "INSERT INTO usuarios values ('','$id_facebook','$nombre_facebook','$id_bingo','$cartonNumber1','$cartonNumber2','$cartonNumber3','$cartonNumber4','$cartonNumber5','$cartonNumber6','participante')";
 		$participanteCreado = mysqli_query($link, $queryParticipar);
 		if($participanteCreado){
 			header('location:bingo.php');

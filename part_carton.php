@@ -13,6 +13,9 @@ while($row = mysqli_fetch_array($resultado)){
 	}
 }
 ?>
+<?php if ($numerosElegidos === 0) { ?>
+	<p>Elige tus numeros!</p>
+<?php } ?>
 <div class="carton__block text-center">
 	<h3 class="carton__block__title">Bingo</h3>
 	<div class="carton__holder">
@@ -24,7 +27,7 @@ while($row = mysqli_fetch_array($resultado)){
 				$numeroX = str_replace('x', '', $numero);
 				echo '<div class="col-6 col-md-4 text-center">';
 				if ($numerosElegidos == 1) {
-					echo '<input type="hidden" name="cartonNumber'.$count.'" value="'.$numeroX.'" />';
+					echo '<input type="hidden" name="cartonNumber'.$count.'" value="'.$numero.'" />';
 					echo '<input type="button" onclick="numeroActivo(this)" id="cartonNumber'.$count.'" class="carton__number';
 					if (strpos($numero, 'x') !== false) {
 						$tieneX = 1;
@@ -40,7 +43,9 @@ while($row = mysqli_fetch_array($resultado)){
 		</div>
 	</div>
 </div>
-<?php if ($tieneX === 0) { ?>
+<?php if ($numerosElegidos === 0) { ?>
 	<p><button type="submit" class="btn btn--green">Jugar carton</button> 
-	<button type="button" onclick="cambiarNumeros()" class="btn btn--border">Cambiar numeros</button></p>
+	<button type="button" onclick="cambiarNumeros()" class="btn btn--orange">Cambiar numeros</button></p>
+<?php } else { ?>
+	<p><button type="button" id="buttonBingo" class="btn btn--green btn--big d-none" data-toggle="modal" data-target="#bingoModal">BINGO!</button></p>
 <?php } ?>
