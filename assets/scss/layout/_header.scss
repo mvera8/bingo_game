@@ -4,11 +4,18 @@
   width: 100%;
   z-index: 99;
 
+  @include media-breakpoint-down(sm) {
+    position: relative;
+  }
+
   &__navbar {
     padding: 10px 0;
   }
 
   &__menu {
+    flex-basis: auto;
+    display: flex;
+
     &__text {
       display: inline-block;
       margin-right: 10px;

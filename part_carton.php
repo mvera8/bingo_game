@@ -1,18 +1,3 @@
-<?php
-include 'conexion.php';
-
-$tieneX = 0;
-$numerosElegidos = 0;
-$numeros = array(rand(0, 10), rand(11, 20), rand(21, 30), rand(31, 40), rand(41, 50), rand(51, 60));
-$query = 'SELECT * FROM usuarios';
-$resultado = mysqli_query ($link, $query);
-while($row = mysqli_fetch_array($resultado)){
-	if ($row['cartonNumber1'] !== '') {
-		$numerosElegidos = 1;
-		$numeros = array($row['cartonNumber1'], $row['cartonNumber2'], $row['cartonNumber3'], $row['cartonNumber4'], $row['cartonNumber5'], $row['cartonNumber6']);
-	}
-}
-?>
 <?php if ($numerosElegidos === 0) { ?>
 	<p>Elige tus numeros!</p>
 <?php } ?>
@@ -43,9 +28,3 @@ while($row = mysqli_fetch_array($resultado)){
 		</div>
 	</div>
 </div>
-<?php if ($numerosElegidos === 0) { ?>
-	<p><button type="submit" class="btn btn--green">Jugar carton</button> 
-	<button type="button" onclick="cambiarNumeros()" class="btn btn--orange">Cambiar numeros</button></p>
-<?php } else { ?>
-	<p><button type="button" id="buttonBingo" class="btn btn--green btn--big d-none" data-toggle="modal" data-target="#bingoModal">BINGO!</button></p>
-<?php } ?>

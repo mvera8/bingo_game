@@ -48,6 +48,10 @@
 
   &__nav {
     padding-top: 100px;
+
+    @include media-breakpoint-down(sm) {
+      padding-top: 0;
+    }
   }
 
   &__marmar {

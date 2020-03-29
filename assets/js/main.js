@@ -11,7 +11,7 @@ $(document).ready(function () {
 })
 
 function showCarton() {
-  $('#carton').show()
+  $('#carton').removeClass('d-none')
   $('#participar').hide()
   var profileName = $('#profileName').html()
   var profileId = $('#profileId').html()

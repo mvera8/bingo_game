@@ -5,8 +5,9 @@ $hayBingo = 0;
 $query = 'SELECT * FROM bingo';
 $resultado = mysqli_query ($link, $query);
 while($row = mysqli_fetch_array($resultado)){
-	if ($row['activo'] == 1) {
+	if ($row['numeros']) {
 		$hayBingo = 1;
+		$pozo = $row['pozo'];
 	}
 }
 
@@ -21,12 +22,15 @@ include('nav.php');
 				<?php if ($hayBingo == 1) { ?>
 					<div class="col-12 col-md-5">
 						<?php include('part_video.php'); ?>
-						<p>Ultimo numero: 5</p>
 					</div>
 					<div class="col-12 col-md-7">
 						<form name="contact" action="">
-							<?php include('part_carton.php'); ?>
+							<?php
+							include('part_numeros.php');
+							include('part_carton.php');
+							?>
 						</form>
+						<p><button type="button" id="buttonBingo" class="btn btn--green btn--big d-none" data-toggle="modal" data-target="#bingoModal">BINGO!</button></p>
 						<div id="message"></div>
 					</div>
 				<?php } ?>
@@ -40,7 +44,7 @@ include('nav.php');
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-body">
-				<p>GANASTE!</p>
+				<p>GANASTE $<?php echo $pozo; ?>!</p>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn--orange" data-dismiss="modal">Salir</button>
