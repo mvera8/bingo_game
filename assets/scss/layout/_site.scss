@@ -2,19 +2,31 @@
   &__logo {
     position: relative;
     margin-bottom: 35px;
-  }
+    width: 640px;
 
-  &__title {
-    @include luckiestRegular();
+    @include media-breakpoint-down(md) {
+      width: 530px;
+    }
 
-    color: $primary-color;
-    font-size: 140px;
-    text-shadow: 2px 0 0 $secondary-color, -2px 0 0 $secondary-color, 0 2px 0 $secondary-color, 0 -2px 0 $secondary-color, 1px 1px $secondary-color, -1px -1px 0 $secondary-color, 1px -1px 0 $secondary-color, -1px 1px 0 $secondary-color;
+    @include media-breakpoint-down(sm) {
+      width: 490px;
+    }
+
+    @include media-breakpoint-down(xs) {
+      width: 280px;
+    }
 
     &--header {
       display: none;
-      font-size: 36px;
     }
+
+    .logo {
+      background-image: url(../images/logo.png);
+    }
+  }
+
+  &__title {
+    display: none;
   }
 
   &__en-casa {
@@ -24,9 +36,31 @@
     background-size: cover;
     height: 52px;
     position: absolute;
-    left: 60%;
+    left: 50%;
+    margin-left: -50px;
     bottom: 0;
     width: 100px;
+
+    @include media-breakpoint-down(xs) {
+      bottom: -20px;
+    }
+  }
+
+  &__nav {
+    padding-top: 100px;
+
+    @include media-breakpoint-down(sm) {
+      padding-top: 0;
+    }
+  }
+
+  &__marmar {
+    background-color: $white;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 12px;
+    margin-top: 35px;
+    padding: 10px;
   }
 
   &__pelotas {
@@ -36,7 +70,7 @@
     background-repeat: no-repeat;
     margin: 0 auto;
 
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(sm) {
       display: none;
     }
   }

@@ -4,18 +4,14 @@ import 'bootstrap'
 var window = require('window')
 window.$ = window.jQuery = window.jquery = $
 
-$(window).on('load', function () {
-  // know if working
-  $('body').addClass('bbb')
-})
-
 $(document).ready(function () {
-  // know if working
-  $('body').addClass('ccc')  
+  var idFacebook = $('#profileId').html();
+  $('#id_usuario').val(idFacebook)
+  bingo()
 })
 
 function showCarton() {
-  $('#carton').show()
+  $('#carton').removeClass('d-none')
   $('#participar').hide()
   var profileName = $('#profileName').html()
   var profileId = $('#profileId').html()
@@ -35,6 +31,14 @@ function cambiarNumeros() {
 }
 window.cambiarNumeros = cambiarNumeros;
 
+function bingo() {
+  var numItems = $('.carton__number--selected').length
+  if (numItems == 6) {
+    $('#buttonBingo').removeClass('d-none')
+  }
+}
+
+
 function numeroActivo(elem) {
   var id_facebook = $('#profileId').html()
   var xValue = ($(elem).prev().val())
@@ -47,8 +51,9 @@ function numeroActivo(elem) {
     url: "form_noreload.php",
     data: dataString,
     success: function() {
-      $('#message').html("numero seleccionado: " + xValue);
+      //$('#message').html("numero seleccionado: " + xValue);
       $('#' + elem.id).toggleClass('carton__number--selected')
+      bingo()
     }
   });
   return false;

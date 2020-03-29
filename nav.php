@@ -1,6 +1,6 @@
 <header class="header">
 	<nav class="navbar header__navbar navbar-expand-lg" role="navigation">
-		<div class="container">
+		<div class="container-fluid">
 			<?php include('logo.php'); ?>
 			<div id="header-menu" class="header__menu collapse navbar-collapse justify-content-end">
 				<ul class="nav navbar-nav">

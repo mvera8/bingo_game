@@ -15,9 +15,10 @@ include('facebook.php');
 						   size="xlarge"
 						  scope="public_profile,email"
 						  onlogin="checkLoginState();">
-						  Continuar
+						  Ingresar
 						</fb:login-button>
 					</div>
+					<span class="site__marmar">Un producto de <b>Mar&Mar</b></span>
 				</div>
 			</div>
 			<div class="col-12 col-md-6">
