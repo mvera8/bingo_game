@@ -1,9 +1,9 @@
+#SSL
+.well-known/
+
 #Node Modules
 node_modules/
 
 # Ignore WordPress Coding Standards
 .wpcs/
 phpcs.xml
-
-# Ignore files that uses info
-conexion.php
