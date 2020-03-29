@@ -1,6 +1,9 @@
 #SSL
 .well-known/
 
+#Exclude conexion file
+conexion.php
+
 #Node Modules
 node_modules/
 

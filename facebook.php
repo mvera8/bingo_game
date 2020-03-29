@@ -12,7 +12,7 @@
         if (window.location.href.indexOf("login.php") > -1) {
           document.getElementById('status').innerHTML = 'Registrate con Facebook para participar: ';
         } else {
-          // window.location.href = '/login.php';
+          window.location.href = '/login.php';
         }
     }
 }
